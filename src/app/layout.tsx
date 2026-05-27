@@ -1,28 +1,36 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, Syne, DM_Mono } from 'next/font/google';
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+});
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-syne',
+});
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-dm-mono',
+});
 
 export const metadata: Metadata = {
-  title: 'Raisuite Web Starter',
-  description: 'Reusable starter template for multi-tenant Raisuite client sites.'
+  title: 'Nihal | Software Engineer',
+  description: 'Portfolio of Nihal, Software Engineer & Architect',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <header className="border-b mb-6">
-          <div className="container-base py-4 flex items-center justify-between">
-            <h1 className="text-xl font-semibold">Raisuite Starter</h1>
-            <nav className="flex gap-4">
-              <a href="/">Home</a>
-              <a href="/contact">Contact</a>
-            </nav>
-          </div>
-        </header>
-        <main className="container-base">{children}</main>
-        <footer className="container-base py-10 text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Raisuite Starter. All rights reserved.
-        </footer>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${cormorant.variable} ${syne.variable} ${dmMono.variable} font-body text-ivory bg-obsidian selection:bg-gold selection:text-obsidian`}>
+        {children}
       </body>
     </html>
   );
