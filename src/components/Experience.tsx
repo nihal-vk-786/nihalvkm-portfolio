@@ -42,7 +42,7 @@ export default function Experience() {
                   fontSize: "6rem", lineHeight: "1", pointerEvents: "none",
                   color: "rgba(201,160,90,0.05)", userSelect: "none" }}
               >
-                {exp.num}
+                {/* {exp.num} */}
               </div>
 
               {/* Left */}
@@ -64,7 +64,7 @@ export default function Experience() {
                   {exp.role}
                 </div>
                 <p className="text-muted" style={{ fontSize: "0.9rem", lineHeight: "1.8" }}>
-                  {exp.desc}
+                  {/* {exp.desc} */}
                 </p>
               </div>
             </motion.div>
