@@ -14,7 +14,6 @@ export default function Projects() {
       }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        
         {/* Section Heading */}
         <motion.p
           className="section-label"
@@ -76,7 +75,7 @@ export default function Projects() {
                   letterSpacing: "0.1em",
                 }}
               >
-                {project?.index || `0${idx + 1}`}
+                {`0${idx + 1}`}
               </div>
 
               {/* Project Info */}
@@ -102,7 +101,7 @@ export default function Projects() {
                     marginBottom: "1rem",
                   }}
                 >
-                  {project?.desc || "No description available."}
+                  {project?.description || "No description available."}
                 </p>
 
                 {/* Tags */}
@@ -113,23 +112,25 @@ export default function Projects() {
                     flexWrap: "wrap",
                   }}
                 >
-                  {Array.isArray(project?.tags) &&
-                    project.tags.map((tag: string, tagIndex: number) => (
-                      <span
-                        key={tagIndex}
-                        className="font-mono text-muted"
-                        style={{
-                          fontSize: "0.6rem",
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          border: "1px solid #2a2a2e",
-                          padding: "0.2rem 0.65rem",
-                          borderRadius: "999px",
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {Array.isArray(project?.tech) &&
+                    project.tech.map(
+                      (tag: string, tagIndex: number) => (
+                        <span
+                          key={tagIndex}
+                          className="font-mono text-muted"
+                          style={{
+                            fontSize: "0.6rem",
+                            letterSpacing: "0.1em",
+                            textTransform: "uppercase",
+                            border: "1px solid #2a2a2e",
+                            padding: "0.2rem 0.65rem",
+                            borderRadius: "999px",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      )
+                    )}
                 </div>
               </div>
 
